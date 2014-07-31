@@ -67,8 +67,8 @@ public class HordeUtil {
 		return objectMapper.readValue(xmlStr, new TypeReference<ArrayList<Character>>(){});
 	}
 
-	private static ObjectMapper createJacksonXmlMapper() {
-		return new ObjectMapper();
+	private static XmlMapper createJacksonXmlMapper() {
+		return new XmlMapper();
 		// TODO
 		// return new ObjectMapper() will return a JSON Object Mapper
 		// How do we return an XML Object Mapper?
@@ -82,6 +82,6 @@ public class HordeUtil {
 		if (!file.getParentFile().exists()) {			
 			throw new InvalidDirectoryException(file.getParent());
 		}
-		//FileUtils.write...
+		FileUtils.writeStringToFile(file, xmlStr);
 	}
 }
