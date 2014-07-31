@@ -1,5 +1,6 @@
 package ca.bcit.comp2613.a00721293.fth;
 
+import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -72,10 +73,8 @@ public class ForTheHordeSwingApplication {
 					// TODO
 					// convert the contents from the textarea to an ArrayList<Character>
 					// persist that arraylist to the in memory DB (H2)
-					//
-					// hints:
-					//ArrayList<Character> characters =  ???.getCharactersArrayListFromXML(textArea.getText());
-					// aCertainRepository.aMethodSimilarToPersist(characters);
+					ArrayList<Character> characters =  HordeUtil.getCharactersArrayListFromXML(textArea.getText());
+					 characterRepository.save(characters);
 				} catch (Exception e) {
 					log.error("", e);
 				}
@@ -105,6 +104,7 @@ public class ForTheHordeSwingApplication {
 				// the SQL in mysteriousQuery with an 'order by xxx' clause
 				String xmlStr = HordeUtil
 						.getCharacterArrayListAsString(characters);
+				textArea.setForeground(Color.GREEN);
 				textArea.setText(xmlStr);
 
 			}

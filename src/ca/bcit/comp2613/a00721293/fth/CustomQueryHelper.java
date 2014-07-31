@@ -38,6 +38,7 @@ public class CustomQueryHelper {
 	// )
 	//
 	// OPTIONAL, run the mysteriousQuery via the browser aka (H2 Console).  See comments under the H2Config java file
+	@SuppressWarnings("unchecked")
 	public List<Character> mysteriousQuery() {
 		List<Character> retval = null;
 		EntityManager em = null;
